@@ -23,6 +23,7 @@ export default function RootLayout({
             <Sidebar />
             {
               // " overflow-y-auto: This means only the vertical axis (Y-axis) will scroll if the content inside is taller than the container."
+              // "flex-1: This means the sidebar will take up only as much space as it needs (minimum), and the main content area will take up the remaining space."
             }
             <div className="flex-1 p-4 bg-gray-100 overflow-y-auto scrollbar-hide">
               {children}
