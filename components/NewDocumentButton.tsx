@@ -17,7 +17,11 @@ export default function NewDocumentButton() {
   }
 
   return (
-    <Button onClick={handleCreateNewDocument} disabled={isPending}>
+    <Button
+      onClick={handleCreateNewDocument}
+      disabled={isPending}
+      className="border"
+    >
       {isPending ? "Creating" : "New Document"}
     </Button>
   );
