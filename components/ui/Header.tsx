@@ -9,6 +9,7 @@ import {
   useUser,
 } from "@clerk/nextjs";
 import { Sign } from "crypto";
+import Breadcrumbs from "./Breadcrumbs";
 
 export default function Header() {
   // Access user info from Clerk
@@ -23,7 +24,7 @@ export default function Header() {
       )}
 
       {/* Breadcrumbs, directory we are currently in */}
-
+      <Breadcrumbs />
       <div>
         <SignedOut>
           <SignInButton />

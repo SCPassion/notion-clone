@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState, useTransition } from "react";
+import Document from "@/components/ui/Document";
+import { useEffect, useState } from "react";
 
 export default function DocumentPage({
   params,
@@ -18,5 +19,9 @@ export default function DocumentPage({
     setId(id);
   }
 
-  return <h1>document</h1>;
+  return (
+    <div className="flex flex-col flex-1 min-h-screen">
+      {id && <Document id={id} />}
+    </div>
+  ); // To ensure the whole screen size is used
 }
