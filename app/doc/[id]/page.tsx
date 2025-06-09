@@ -7,14 +7,16 @@ export default function DocumentPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const [id_t, setId] = useState<string | null>(null);
-  const [isPending, startTransition] = useTransition();
+  const [id, setId] = useState<string | null>(null);
+  useEffect(() => {
+    getId();
+  }, []);
 
-  startTransition(async () => {
+  async function getId() {
+    // Await the params promise to get the id
     const { id } = await params;
-
     setId(id);
-  });
+  }
 
   return <h1>document</h1>;
 }
